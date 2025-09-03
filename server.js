@@ -9,15 +9,15 @@ const DB_URL = process.env.DB_URL || 'mongodb://localhost/versionierung-stations
 app.use(cors());
 app.use(express.json());
 
-// MongoDB Verbindung
+// MongoDB connection
 mongoose.connect(DB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('MongoDB verbunden'))
+  .then(() => console.log('MongoDB connected'))
   .catch(err => console.log(err));
 
 app.get('/', (req, res) => {
-  res.send('API läuft');
+  res.send('API is running');
 });
 
 app.listen(PORT, () => {
-  console.log(`Server läuft auf Port ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
